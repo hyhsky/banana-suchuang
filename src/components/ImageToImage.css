@@ -1,0 +1,176 @@
+/* ImageToImage.css */
+.image-to-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* ==================== 多图上传网格 (参考 UI) ==================== */
+.images-upload-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+/* 图片卡片样式 */
+.image-card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-base);
+}
+
+.image-card:hover {
+    transform: translateY(-2px);
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 删除按钮样式 */
+.btn-delete {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all var(--transition-base);
+    opacity: 0;
+}
+
+.image-card:hover .btn-delete {
+    opacity: 1;
+}
+
+.btn-delete:hover {
+    background: var(--color-error);
+    transform: scale(1.1);
+}
+
+/* 加图按钮样式 (参考 UI) */
+.add-image-btn {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    /* 圆角矩形 */
+    cursor: pointer;
+    color: var(--color-text-tertiary);
+    transition: all var(--transition-base);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.add-image-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.add-image-btn svg {
+    margin-bottom: 4px;
+    opacity: 0.7;
+}
+
+.add-image-btn span {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.upload-hint {
+    margin-top: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+}
+
+/* ==================== 滑块样式 ==================== */
+.slider {
+    width: 100%;
+    height: 6px;
+    background: var(--color-bg-elevated);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+    transition: transform var(--transition-base);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-xs);
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+}
+
+/* ==================== 结果面板和精修 ==================== */
+.result-column {
+    animation: fadeIn 0.5s ease;
+}
+
+.refine-panel {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.refine-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+}
+
+.refine-input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-refine {
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 1024px) {
+    .image-to-image {
+        grid-template-columns: 1fr;
+    }
+}

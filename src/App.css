@@ -1,0 +1,149 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== 头部样式 ==================== */
+.app-header {
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+}
+
+.header-content {
+  text-align: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.logo-icon {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+/* ==================== 主内容区 ==================== */
+.app-main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+/* ==================== 标签页样式 ==================== */
+.tabs-container {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-xs);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.tab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.tab:hover {
+  color: var(--color-text-primary);
+}
+
+.tab:hover::before {
+  opacity: 0.1;
+}
+
+.tab.active {
+  color: white;
+}
+
+.tab.active::before {
+  opacity: 1;
+}
+
+.tab span,
+.tab svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== 标签页内容 ==================== */
+.tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ==================== 页脚样式 ==================== */
+.app-footer {
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-size: 0.875rem;
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 2rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    justify-content: flex-start;
+  }
+}
