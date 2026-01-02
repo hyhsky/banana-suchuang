@@ -30,7 +30,7 @@
 ### 3.2 请求参数示例 (JSON)
 ```json
 {
-  "key": "tLdPCRBfuA4nK1Exu9h9lNh2a6",
+  "key": "tLdPCRBfuA4nK1Exu9h9lxxxxx",
   "prompt": "将这个人物放在雪地背景中",
   "aspectRatio": "16:9",
   "imageSize": "2K",
