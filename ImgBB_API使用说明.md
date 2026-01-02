@@ -17,7 +17,7 @@
 
 - **API 端点**: `https://api.imgbb.com/1/upload`
 - **鉴权方式**: 将 Key 拼接在 URL Query 中。
-- **当前生效 Key**: `bd521134b0e14ad15cf962e2d002544e`
+
 
 ---
 
